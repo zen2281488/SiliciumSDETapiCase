@@ -1,4 +1,3 @@
-
 name: Java CI with Maven
 
 on:
@@ -23,7 +22,7 @@ jobs:
           distribution: 'corretto'
           cache: maven
 
-      - name: Run UI XYZ Bank Tests via Maven
+      - name: Run PokeAPI-Test-API-Project-Silicium via Maven
         run: mvn -B package --file pom.xml
 
       - name: Get Allure history

@@ -44,12 +44,13 @@ public class TestAPI {
     @Test
     @Issue("API-POKEAPI-002")
     @DisplayName("Проверка пагинации. Проверка наличия Имен в коллекции results")
-    public void testPokeApi002() {
+    public void testPokeApi002() throws Exception {
         PokemonRoot pokemonRootResponse = ResponseToPokeApi.getPokemonRootData();
-        CustomLogStep.logStep("Начинается проверка условия: Число покемонов Count меньше длины коллекции results.");
-        Assert.assertTrue(pokemonRootResponse.getCount() > pokemonRootResponse.getResults().size());
+        CustomLogStep.logStep("Начинается проверка условия: число limit равно длине коллекции results");
+        Assert.assertEquals(PokemonRoot.getLimit(pokemonRootResponse.getNext()), pokemonRootResponse.getResults().size());
         CustomLogStep.logStep("Начинается проверка наличия в коллекции results, name покемонов.");
         Assert.assertTrue(pokemonRootResponse.getResults().stream().allMatch(x -> Objects.nonNull(x.getName())));
+
     }
 
     @After
