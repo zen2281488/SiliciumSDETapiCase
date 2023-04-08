@@ -22,7 +22,7 @@ jobs:
           distribution: 'corretto'
           cache: maven
 
-      - name: Run PokeAPI-Test-API-Project-Silicium via Maven
+      - name: Run PokeAPI-Test-API-Project via Maven
         run: mvn -B package --file pom.xml
 
       - name: Get Allure history
