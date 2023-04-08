@@ -1,4 +1,4 @@
-# Практикум SDET: задание API
+# Практикум SDET: API тест PokeAPI
     1.ID: API-POKEAPI №1     
 
     Пути:
