@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Apr 08 19:13:28 GMT 2023","Sat Apr 08 19:13:32 GMT 2023","4084","","cases.TestAPI","","cases.TestAPI","testPokeApi001","Проверка наличия у Rattata способности run-away, а у Pidgeotto её отсутствия, а так же того что weight Rattata меньше чем у Pidgeotto.",""
+"passed","Sat Apr 08 19:13:28 GMT 2023","Sat Apr 08 19:13:32 GMT 2023","3849","","cases.TestAPI","","cases.TestAPI","testPokeApi002","Проверка пагинации. Проверка наличия Имен в коллекции results",""
