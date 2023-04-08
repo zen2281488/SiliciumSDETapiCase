@@ -28,7 +28,7 @@
             •	Отправить запрос https://pokeapi.co/api/v2/pokemon/rattata и десериализовать ответ.
             •	Отправить запрос https://pokeapi.co/api/v2/pokemon/pidgeotto и десериализовать ответ.
         Ожидаемый результат:
-            •   У rattata в одном из элементов адреса rattata[abilities], присутствует [ability][name] равное “run-away”.
+            •       У rattata в одном из элементов адреса rattata[abilities], присутствует [ability][name] равное “run-away”.
             •	У pidgeotto  в rattata[abilities], отсутствует  [ability][name] равное “run-away”.
             •	Выполняется условие rattata[weight] меньше pidgeotto[weight]
         Постусловия:
