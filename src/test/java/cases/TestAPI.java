@@ -57,7 +57,7 @@ public class TestAPI {
     @Epic("Апи тесты общей коллекции покемонов.")
     @Test
     @Issue("API-POKEAPI-004")
-    @DisplayName("Проверка пагинации коллекции. Проверка наличия Имен в коллекции results")
+    @DisplayName("Проверка пагинации коллекции.")
     public void testPokeApi004() {
         Assert.
                 assertEquals(
@@ -67,7 +67,7 @@ public class TestAPI {
     @Epic("Апи тесты общей коллекции покемонов.")
     @Test
     @Issue("API-POKEAPI-005")
-    @DisplayName("Проверка пагинации. Проверка наличия Имен в коллекции results")
+    @DisplayName("Проверка наличия Имен в коллекции results")
     public void testPokeApi005() {
         Assert
                 .assertTrue(
