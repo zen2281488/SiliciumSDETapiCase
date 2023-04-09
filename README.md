@@ -8,6 +8,7 @@
         •Воркфлоу для github actions: .github/workflows/maven.yml
         •Директория для отчетов Allur: target/allure-results
     
+        
     Зависимости, версии:
         •JVM - 11
         •allure - 2.17.2
