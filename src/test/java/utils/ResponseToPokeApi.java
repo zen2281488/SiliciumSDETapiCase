@@ -4,8 +4,8 @@ import apiData.Pokemon;
 import apiData.PokemonRoot;
 import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
@@ -14,17 +14,10 @@ public class ResponseToPokeApi {
     private static final ThreadLocal<Pokemon> pidgeotto = new ThreadLocal<>();
     private static final ThreadLocal<PokemonRoot> pokemonRoot = new ThreadLocal<>();
 
-    static {
-        RestAssured.filters(new AllureRestAssured());
-        RestAssured.baseURI = "https://pokeapi.co/api/v2/";
-    }
-
     @Step("Запрос данных о покемоне Rattata.")
     public static Pokemon getRattataData() {
         rattata.set(
-                given()
-                        .contentType(ContentType.JSON)
-                        .when()
+                requestSpec()
                         .get("pokemon/rattata")
                         .then()
                         .statusCode(200)
@@ -37,9 +30,7 @@ public class ResponseToPokeApi {
     @Step("Запрос данных о покемоне Pidgeotto.")
     public static Pokemon getPidgeottoData() {
         pidgeotto.set(
-                given()
-                        .contentType(ContentType.JSON)
-                        .when()
+                requestSpec()
                         .get("pokemon/pidgeotto")
                         .then()
                         .statusCode(200)
@@ -51,9 +42,7 @@ public class ResponseToPokeApi {
     @Step("Запрос данных коллекции покемонов.")
     public static PokemonRoot getPokemonRootData() {
         pokemonRoot.set(
-                given()
-                        .contentType(ContentType.JSON)
-                        .when()
+                requestSpec()
                         .get("pokemon")
                         .then()
                         .statusCode(200)
@@ -61,4 +50,13 @@ public class ResponseToPokeApi {
                         .as(PokemonRoot.class));
         return pokemonRoot.get();
     }
+
+    public static RequestSpecification requestSpec() {
+        return given()
+                .filters(new AllureRestAssured())
+                .baseUri(ConfProperties.getProperty("url"))
+                .accept(ContentType.JSON)
+                .when();
+    }
+
 }
