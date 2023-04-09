@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"c4a086f7199e8d96c762862c60975298","name":"АПИ тесты коллекции конкретных покемонов.","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}},{"uid":"58a94b64d79ac9610336b2596d4f3848","name":"Апи тесты общей коллекции покемонов.","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
